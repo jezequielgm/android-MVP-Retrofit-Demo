@@ -39,14 +39,15 @@ public class MarsPhotosAdapter extends RecyclerView.Adapter<MarsPhotosAdapter.Ma
     public void onBindViewHolder(final MarsPhotosAdapter.MarsPhotosViewHolder holder, int position) {
         holder.textViewEarthDate.setText(marsPhotosArrayList.get(position).getEarthDate());
         holder.textViewCameraFullName.setText(marsPhotosArrayList.get(position).getCamera());
+        final String marsPhotoURL = marsPhotosArrayList.get(position).getImgSrc();
         Picasso.get()
-                .load(marsPhotosArrayList.get(position).getImgSrc())
+                .load(marsPhotoURL)
                 .into(holder.imageViewMarsPhoto);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                recyclerItemClickListener.onItemClick(holder.imageViewMarsPhoto);
+                recyclerItemClickListener.onItemClick(marsPhotoURL);
             }
         });
     }

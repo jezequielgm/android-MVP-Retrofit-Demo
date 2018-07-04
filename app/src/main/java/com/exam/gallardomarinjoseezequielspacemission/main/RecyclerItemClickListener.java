@@ -5,5 +5,5 @@ import android.widget.ImageView;
 import com.exam.gallardomarinjoseezequielspacemission.model.MarsPhotos;
 
 public interface RecyclerItemClickListener {
-    void onItemClick(ImageView marsPhoto);
+    void onItemClick(String marsPhotoURL);
 }

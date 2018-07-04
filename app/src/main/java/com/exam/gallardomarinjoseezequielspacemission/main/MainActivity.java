@@ -1,5 +1,8 @@
 package com.exam.gallardomarinjoseezequielspacemission.main;
 
+import android.app.DialogFragment;
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -72,8 +75,20 @@ public class MainActivity extends AppCompatActivity implements MainContract.Main
 
     private RecyclerItemClickListener recyclerItemClickListener = new RecyclerItemClickListener() {
         @Override
-        public void onItemClick(ImageView marsPhoto) {
+        public void onItemClick(String marsPhotoURL) {
+            final String TAG = "fullscreenFragmentDialog";
 
+            FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+            Fragment fragment = getFragmentManager().findFragmentByTag(TAG);
+
+            if(fragment != null){
+                fragmentTransaction.remove(fragment);
+            }
+
+            fragmentTransaction.addToBackStack(null);
+
+            DialogFragment dialogFragment = MarsFullscreenDialogFragment.newInstance(marsPhotoURL);
+            dialogFragment.show(fragmentTransaction, TAG);
         }
     };
 
