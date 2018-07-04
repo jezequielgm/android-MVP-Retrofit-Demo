@@ -25,14 +25,6 @@ public class MainPresenterImpl implements MainContract.Presenter, MainContract.I
     }
 
     @Override
-    public void onRefreshButtonClick() {
-        if(this.mainView != null )
-            mainView.showProgress();
-
-        intractor.getMarsPhotosArrayList(this);
-    }
-
-    @Override
     public void requestDataFromServer() {
         intractor.getMarsPhotosArrayList(this);
     }
