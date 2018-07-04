@@ -46,7 +46,7 @@ public class MarsPhotosAdapter extends RecyclerView.Adapter<MarsPhotosAdapter.Ma
         }
         else
         {
-            holder.itemView.setBackgroundColor(Color.parseColor("#FFF"));
+            holder.itemView.setBackgroundColor(Color.parseColor("#FFFFFF"));
         }
 
         holder.textViewEarthDate.setText(marsPhotosArrayList.get(position).getEarthDate());
