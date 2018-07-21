@@ -9,7 +9,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
@@ -94,7 +93,8 @@ public class MainActivity extends AppCompatActivity implements MainContract.Main
 
     @Override
     public void setDataToRecyclerView(ArrayList<MarsPhotos> marsPhotoArrayList) {
-        MarsPhotosAdapter marsPhotosAdapter = new MarsPhotosAdapter(marsPhotoArrayList, recyclerItemClickListener);
+        MarsPhotosAdapter marsPhotosAdapter = new MarsPhotosAdapter(marsPhotoArrayList,
+                recyclerItemClickListener);
         recyclerView.setAdapter(marsPhotosAdapter);
     }
 
